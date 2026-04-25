@@ -1,7 +1,9 @@
 package com.springboot.mongodb.services;
 
+import com.springboot.mongodb.dto.UserDTO;
 import com.springboot.mongodb.entities.User;
 import com.springboot.mongodb.repositories.UserRepository;
+import com.springboot.mongodb.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +19,8 @@ public class UserService {
         return repository.findAll();
     }
 
-    public User findById(Long id){
+    public User findById(Long id) {
         Optional<User> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 }
