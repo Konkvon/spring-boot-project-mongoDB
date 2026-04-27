@@ -1,6 +1,7 @@
 package com.springboot.mongodb.config;
 
 import com.springboot.mongodb.dto.AuthorDTO;
+import com.springboot.mongodb.dto.CommentDTO;
 import com.springboot.mongodb.entities.Post;
 import com.springboot.mongodb.entities.User;
 import com.springboot.mongodb.repositories.PostRepository;
@@ -37,6 +38,13 @@ public class Instatiation implements CommandLineRunner {
 
         Post post1 = new Post(null, sdf.parse("29/04/2026"), "Projeto finalizado", "O projeto blabla foi finalizado", new AuthorDTO(maria));
         Post post2 = new Post(null, sdf.parse("10/03/2018"), "Bom dia", "Bom dia pessoal!", new AuthorDTO(maria));
+
+        CommentDTO co1 = new CommentDTO(new AuthorDTO(alex), sdf.parse("30/04/2026"), "Parabéns pelo projeto");
+        CommentDTO co2 = new CommentDTO(new AuthorDTO(bob), sdf.parse("31/04/2026"), "Parabéns!");
+        CommentDTO co3 = new CommentDTO(new AuthorDTO(alex), sdf.parse("10/03/2026"), "Bom dia!");
+
+        post1.getComments().addAll(Arrays.asList(co1, co2));
+        post2.getComments().addAll(Arrays.asList(co3));
 
         postRepository.saveAll(Arrays.asList(post1, post2));
 
