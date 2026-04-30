@@ -1,4 +1,4 @@
-# spring-boot-project-mongDB
+# spring-boot-project-mongoDB
 
 ## Descrição
 
