@@ -75,69 +75,6 @@ O projeto segue a estrutura padrão de um projeto Spring Boot, com os seguintes 
     ```
 
     A aplicação estará disponível em `http://localhost:8080`.
-
-## Exemplos de Requisições (com cURL)
-
-### Usuários
-
-#### Listar todos os usuários
-```bash
-curl -X GET http://localhost:8080/users
-```
-
-#### Buscar usuário por ID
-```bash
-curl -X GET http://localhost:8080/users/60c72b2f9b1e8b0015f8e7a1
-```
-*(Substitua o ID pelo ID de um usuário existente)*
-
-#### Inserir novo usuário
-```bash
-curl -X POST -H "Content-Type: application/json" -d 
-'{
-  "name": "Novo Usuário",
-  "email": "novo.usuario@example.com"
-}' http://localhost:8080/users
-```
-
-#### Atualizar usuário
-```bash
-curl -X PUT -H "Content-Type: application/json" -d 
-'{
-  "name": "Usuário Atualizado",
-  "email": "atualizado@example.com"
-}' http://localhost:8080/users/60c72b2f9b1e8b0015f8e7a1
-```
-*(Substitua o ID pelo ID de um usuário existente)*
-
-#### Deletar usuário
-```bash
-curl -X DELETE http://localhost:8080/users/60c72b2f9b1e8b0015f8e7a1
-```
-*(Substitua o ID pelo ID de um usuário existente)*
-
-#### Buscar posts de um usuário
-```bash
-curl -X GET http://localhost:8080/users/60c72b2f9b1e8b0015f8e7a1/posts
-```
-*(Substitua o ID pelo ID de um usuário existente)*
-
-### Posts
-
-#### Buscar post por ID
-```bash
-curl -X GET http://localhost:8080/posts/60c72b2f9b1e8b0015f8e7a2
-```
-*(Substitua o ID pelo ID de um post existente)*
-
-#### Buscar posts por título
-```bash
-curl -X GET "http://localhost:8080/posts/titlesearch?text=Bom%20dia"
-```
-
-#### Busca completa de posts
-```bash
-curl -X GET "http://localhost:8080/posts/fullsearch?text=projeto&minDate=2026-01-01&maxDate=2026-12-31"
 ```
 
 ## Autor
