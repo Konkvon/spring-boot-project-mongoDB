@@ -75,8 +75,3 @@ O projeto segue a estrutura padrão de um projeto Spring Boot, com os seguintes 
     ```
 
     A aplicação estará disponível em `http://localhost:8080`.
-```
-
-## Autor
-
-**Manus AI**
